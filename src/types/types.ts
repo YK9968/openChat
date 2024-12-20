@@ -1,4 +1,3 @@
-// types.ts
 export interface User {
   name: string | null;
   email: string | null;
@@ -9,6 +8,8 @@ export interface AuthState {
   token: string | null;
   isLoggedIn: boolean;
   isRefreshing: boolean;
+  authLoading: boolean;
+  authError: boolean;
 }
 
 export interface RootState {
@@ -21,17 +22,7 @@ export interface IRegisterUser {
   email: string;
   password: string;
 }
-
-export interface Tokens {
-  accessToken: string;
-  refreshToken: string;
-}
-
-export interface RegisterUserResponse {
-  status: number;
-  message: string;
-  data: {
-    user: User;
-    tokens: Tokens;
-  };
+export interface ILoginUser {
+  email: string;
+  password: string;
 }
