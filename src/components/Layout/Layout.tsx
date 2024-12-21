@@ -3,15 +3,17 @@ import Navigation from "../Navigation/Navigation";
 import Loader from "../Loader/Loader";
 import { useAppSelector } from "../../redux/store";
 import { selectIsLoading } from "../../redux/auth/selectors";
+import { selectIsLoadingUser } from "../../redux/users/selectors";
 
 interface ILayout {
   children: ReactNode;
 }
 const Layout: FC<ILayout> = ({ children }) => {
-  const isLoading = useAppSelector(selectIsLoading);
+  const isLoadingAuth = useAppSelector(selectIsLoading);
+  const isLoadingUsers = useAppSelector(selectIsLoadingUser);
   return (
     <div>
-      {isLoading && <Loader />}
+      {(isLoadingAuth || isLoadingUsers) && <Loader />}
       <Navigation />
       <div className="px-20">{children}</div>
     </div>

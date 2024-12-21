@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../redux/store";
-import { ILoginUser } from "../../types/types";
+import { ILoginUser } from "../../types/authTypes";
 import { ErrorMessage, Field, Formik, FormikHelpers, Form } from "formik";
 import { FaEyeSlash } from "react-icons/fa";
 import { loginValidation } from "../../validation/validationLoginUser";

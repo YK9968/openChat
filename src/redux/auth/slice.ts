@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loginUser, registerUser } from "./operations";
-import { AuthState } from "../../types/types";
+import { AuthState } from "../../types/authTypes";
 
 const initialState: AuthState = {
   user: {
@@ -41,7 +41,8 @@ export const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.isLoggedIn = true;
-        state.token = action.payload.accessToken;
+        state.user = action.payload.userinfo;
+        state.token = action.payload.tokens.accessToken;
         state.authLoading = false;
       })
       .addCase(loginUser.rejected, (state) => {

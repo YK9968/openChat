@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
-import { IRegisterUser } from "../../types/types";
+import { IRegisterUser } from "../../types/authTypes";
 import { registerValidation } from "../../validation/validationRegisterUser";
 import { useState } from "react";
 import { FaEyeSlash } from "react-icons/fa";

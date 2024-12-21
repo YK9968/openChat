@@ -1,3 +1,6 @@
+import { PersistPartial } from "redux-persist/es/persistReducer";
+import { IUserState } from "./userTypes";
+
 export interface User {
   name: string | null;
   email: string | null;
@@ -13,7 +16,8 @@ export interface AuthState {
 }
 
 export interface RootState {
-  auth: AuthState;
+  auth: AuthState & PersistPartial;
+  users: IUserState;
 }
 
 export interface IRegisterUser {

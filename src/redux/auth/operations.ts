@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ILoginUser, IRegisterUser } from "../../types/types";
+import { ILoginUser, IRegisterUser } from "../../types/authTypes";
 
 axios.defaults.baseURL = "https://openchat-server-4u00.onrender.com/api/";
 
@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk(
   async (user: ILoginUser, thunkAPI) => {
     try {
       const response = await axios.post("auth/login", user);
-      setAuthHeader(response.data.data.accessToken);
+      setAuthHeader(response.data.data.tokens.accessToken);
       return response.data.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(
