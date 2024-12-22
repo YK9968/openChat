@@ -4,6 +4,7 @@ import { AuthState } from "../../types/authTypes";
 
 const initialState: AuthState = {
   user: {
+    id: null,
     name: null,
     email: null,
   },
