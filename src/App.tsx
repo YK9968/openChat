@@ -6,6 +6,7 @@ import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UserMainPage from "./pages/UserMainPage/UserMainPage";
+import ChatPage from "./pages/ChatPage/ChatPage";
 
 const App = () => {
   return (
@@ -35,6 +36,12 @@ const App = () => {
           path="/user-chats"
           element={
             <PrivateRoute component={<UserMainPage />} redirectTo={"/login"} />
+          }
+        />
+        <Route
+          path="/chat/:id"
+          element={
+            <PrivateRoute component={<ChatPage />} redirectTo={"/login"} />
           }
         />
       </Routes>

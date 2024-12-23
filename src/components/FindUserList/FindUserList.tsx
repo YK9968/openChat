@@ -20,7 +20,7 @@ const FindUserList = () => {
   return (
     <ul className="flex flex-wrap gap-3 w-findUsersListWidth">
       {fiterUsers.map((user) => (
-        <li className="bg-white w-40 h-32 rounded-2xl p-3 " key={user.id}>
+        <li className="bg-white w-42 h-32 rounded-2xl p-3 " key={user.id}>
           <UserCard user={user} />
         </li>
       ))}

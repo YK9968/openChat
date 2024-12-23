@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        findUsersListWidth: "676px",
+        findUsersListWidth: "688px",
       },
     },
   },

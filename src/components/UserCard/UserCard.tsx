@@ -32,7 +32,7 @@ const UserCard: FC<IUserCardProps> = ({ user }) => {
         onClick={handleChat}
         className="bg-rose-500 py-3 px-7 border-none rounded-xl hover:bg-rose-600 transition-all duration-150 ease-in-out text-white "
       >
-        Go to chat
+        Create chat
       </button>
     </>
   );
