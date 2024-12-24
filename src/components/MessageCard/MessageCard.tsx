@@ -22,7 +22,7 @@ const MessageCard: FC<IMessageCardProps> = ({ message, user }) => {
             : "bg-white text-black"
         } break-words`}
       >
-        {message.message}
+        {message.text}
       </p>
       <p className="text-black opacity-55">{formatDate(message.createdAt)}</p>
     </div>

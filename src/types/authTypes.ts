@@ -1,6 +1,7 @@
 import { PersistPartial } from "redux-persist/es/persistReducer";
 import { IUserState } from "./userTypes";
 import { IChatsState } from "./chatTypes";
+import { IMessagesState } from "./messagesType";
 
 export interface User {
   id: string | null;
@@ -21,6 +22,7 @@ export interface RootState {
   auth: AuthState & PersistPartial;
   users: IUserState;
   chats: IChatsState;
+  messages: IMessagesState;
 }
 
 export interface IRegisterUser {

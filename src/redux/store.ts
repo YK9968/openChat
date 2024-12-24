@@ -15,6 +15,7 @@ import { authReducer } from "./auth/slice";
 import { userReducer } from "./users/slice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { chatsReducer } from "./chats/slice";
+import { mesagesReducer } from "./messages/slice";
 
 const authPersistConfig = {
   key: "auth",
@@ -29,6 +30,7 @@ export const store = configureStore({
     auth: persistAuthReducer,
     users: userReducer,
     chats: chatsReducer,
+    messages: mesagesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
