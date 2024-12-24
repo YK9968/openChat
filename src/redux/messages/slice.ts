@@ -25,6 +25,9 @@ const messagesSlice = createSlice({
         (msg) => msg.id !== action.payload
       );
     },
+    resetSlice(state) {
+      state.messages = [];
+    },
   },
 
   extraReducers(builder) {
@@ -45,5 +48,5 @@ const messagesSlice = createSlice({
 });
 
 export const mesagesReducer = messagesSlice.reducer;
-export const { addMessages, updateMessages, deleteMessages } =
+export const { addMessages, updateMessages, deleteMessages, resetSlice } =
   messagesSlice.actions;

@@ -58,8 +58,7 @@ const MessageList: FC<IMessageListProps> = ({
           <Modal
             style={{
               content: {
-                width: "566px",
-                height: "510px",
+                width: "500px",
                 position: "relative",
                 ...styles,
               },

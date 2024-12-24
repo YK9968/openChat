@@ -16,6 +16,8 @@ const Layout: FC<ILayout> = ({ children }) => {
   const isLoadingChats = useAppSelector(selectIsLoaderChats);
   const isLoadingMsg = useAppSelector(selectIsLoadingMsg);
 
+  console.log(isLoadingMsg);
+
   return (
     <div>
       {(isLoadingAuth || isLoadingUsers || isLoadingChats || isLoadingMsg) && (

@@ -1,16 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { ILoginUser, IRegisterUser } from "../../types/authTypes";
+import { RootState } from "../store";
 
 axios.defaults.baseURL = "https://openchat-server-39rp.onrender.com/api/";
 
 const setAuthHeader = (token: string) => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 };
-
-// const clearAuthHeader = () => {
-//   axios.defaults.headers.common["Authorization"] = "";
-// };
 
 export const registerUser = createAsyncThunk(
   "auth/register",
@@ -38,5 +35,28 @@ export const loginUser = createAsyncThunk(
         error.response?.data?.message || "Failed to login"
       );
     }
+  }
+);
+
+export const refreshUser = createAsyncThunk(
+  "auth/refresh-user",
+  async (_, thunkAPI) => {
+    const reduxState: RootState = thunkAPI.getState() as RootState;
+    const savedTokens: string | null = reduxState.auth.token;
+    if (!savedTokens) return;
+    setAuthHeader(savedTokens);
+    const response = await axios.get("auth/refresh-user", {
+      headers: {
+        Authorization: `Bearer ${savedTokens}`,
+      },
+    });
+    return response.data.data;
+  },
+  {
+    condition(_, thunkAPI) {
+      const reduxState: RootState = thunkAPI.getState() as RootState;
+      const savedTokens: string | null = reduxState.auth.token;
+      return savedTokens !== null;
+    },
   }
 );

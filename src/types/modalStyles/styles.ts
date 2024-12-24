@@ -5,7 +5,7 @@ export const overlay = {
 export const styles = {
   margin: "auto",
   borderRadius: "20px",
-  padding: "64px",
+  padding: "48px",
   backgroundColor: "#fff",
   boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
 };

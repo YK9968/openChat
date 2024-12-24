@@ -11,6 +11,7 @@ import { selectMessages } from "../../redux/messages/selectors";
 import {
   addMessages,
   deleteMessages,
+  resetSlice,
   updateMessages,
 } from "../../redux/messages/slice";
 
@@ -68,6 +69,7 @@ const ChatPage = () => {
   return (
     <div>
       <Link
+        onClick={() => dispatch(resetSlice())}
         className="bg-rose-500 py-3 px-7 border-none rounded-xl hover:bg-rose-600 transition-all duration-150 ease-in-out text-white mb-8 inline-block "
         to="/user-chats"
       >

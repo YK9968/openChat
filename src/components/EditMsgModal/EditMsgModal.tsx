@@ -25,18 +25,21 @@ const EditMsgModal: FC<IEditMsgModalProps> = ({
   return (
     <Formik initialValues={{ text: msg.text }} onSubmit={editText}>
       <Form>
-        <Field
-          className="border py-4 pl-4 w-96 mb-4 rounded-2xl "
-          type="text"
-          name="text"
-        />
-
-        <button
-          className="bg-rose-500 py-3 px-10 border-none rounded-xl hover:bg-rose-600 transition-all duration-150 ease-in-out text-white mt-2 "
-          type="submit"
-        >
-          Save
-        </button>
+        <h2 className=" text-2xl pb-12">Edit message</h2>
+        <div className="flex flex-col justify-center items-center">
+          <Field
+            as="textarea"
+            className=" focus:outline-none   p-4  w-96 mb-4 rounded-2xl resize-none overflow-auto max-h-chatHeight custom-scrollbar "
+            type="text"
+            name="text"
+          />
+          <button
+            className="bg-rose-500 py-3 px-10 border-none rounded-xl hover:bg-rose-600 transition-all duration-150 ease-in-out text-white mt-2 w-40 "
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
       </Form>
     </Formik>
   );
