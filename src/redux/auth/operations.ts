@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { ILoginUser, IRegisterUser } from "../../types/authTypes";
 
-axios.defaults.baseURL = "https://openchat-server-39rp.onrender.com/api/";
+axios.defaults.baseURL = "http://localhost:4000/api/";
 
 const setAuthHeader = (token: string) => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;

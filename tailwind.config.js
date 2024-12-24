@@ -6,6 +6,9 @@ module.exports = {
       width: {
         findUsersListWidth: "688px",
       },
+      height: {
+        chatHeight: "500px",
+      },
     },
   },
   plugins: [],
