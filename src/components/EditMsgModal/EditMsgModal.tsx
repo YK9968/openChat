@@ -3,13 +3,13 @@ import { Message } from "../../types/messagesType";
 import { Field, Form, Formik, FormikHelpers } from "formik";
 
 interface IEditMsgModalProps {
-  togleForm: () => void;
+  toggleForm: () => void;
   msg: Message;
   updateMessage: (id: string, text: string) => void;
 }
 
 const EditMsgModal: FC<IEditMsgModalProps> = ({
-  togleForm,
+  toggleForm,
   msg,
   updateMessage,
 }) => {
@@ -19,7 +19,7 @@ const EditMsgModal: FC<IEditMsgModalProps> = ({
   ) => {
     updateMessage(msg.id, value.text);
     actions.resetForm();
-    togleForm();
+    toggleForm();
   };
 
   return (

@@ -24,8 +24,11 @@ const MessageList: FC<IMessageListProps> = ({
 }) => {
   Modal.setAppElement("#root");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-  const [isOpenEditModal, setIsOpenEditModal] = useState<boolean>(false);
-  const togleEditModal = () => setIsOpenEditModal(!isOpenEditModal);
+  const [isOpenEditModal, setIsOpenEditModal] = useState<string | null>(null);
+
+  const toggleEditModal = (id: string) => {
+    setIsOpenEditModal(id === isOpenEditModal ? null : id);
+  };
 
   useEffect(() => {
     scrollToBottom();
@@ -50,7 +53,7 @@ const MessageList: FC<IMessageListProps> = ({
               <button onClick={() => deleteMessage(message.id)}>
                 <MdDeleteOutline className="w-5 h-5 hover:text-rose-600 transition-all duration-150 ease-in-out" />
               </button>
-              <button onClick={togleEditModal}>
+              <button onClick={() => toggleEditModal(message.id)}>
                 <MdOutlineEdit className="w-5 h-5 hover:text-rose-600 transition-all duration-150 ease-in-out" />
               </button>
             </div>
@@ -64,17 +67,17 @@ const MessageList: FC<IMessageListProps> = ({
               },
               overlay,
             }}
-            isOpen={isOpenEditModal}
-            onRequestClose={togleEditModal}
+            isOpen={isOpenEditModal === message.id}
+            onRequestClose={() => setIsOpenEditModal(null)}
           >
             <button
-              onClick={togleEditModal}
+              onClick={() => setIsOpenEditModal(null)}
               className="absolute right-7 top-7 "
             >
               <IoCloseOutline className="w-8 h-8" />
             </button>
             <EditMsgModal
-              togleForm={togleEditModal}
+              toggleForm={() => setIsOpenEditModal(null)}
               msg={message}
               updateMessage={updateMessage}
             />
