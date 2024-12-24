@@ -28,7 +28,8 @@ const SearchBar = () => {
       <Form className="mb-6">
         <h2 className="mb-5 font-medium text-4xl">Hello,{user.name}</h2>
         <p className="mb-10 text-base opacity-50 w-96">
-          Start searching for new friends to chat with — enter a phone number.
+          Start searching for new friends to chat with — enter a phone number
+          like 068XXXXXXX
         </p>
         <div className="relative">
           <Field
