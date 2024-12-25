@@ -25,7 +25,7 @@ const ChatPage = () => {
 
   useEffect(() => {
     if (!id) return;
-    const socket = io("http://localhost:4000");
+    const socket = io("https://openchat-server-39rp.onrender.com");
     setSocket(socket);
     dispatch(getAllMessages(id));
     socket.emit("join_chat", { chatId: id });
