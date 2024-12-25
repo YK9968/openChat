@@ -52,7 +52,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="name"
               component="div"
-              className="text-red-500 text-base opacity-70   "
+              className="text-rose-500 text-base absolute left-400 top-4  "
             />
           </div>
 
@@ -66,7 +66,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="email"
               component="div"
-              className="text-red-500 text-base opacity-70   "
+              className="text-rose-500 text-base absolute left-400 top-4  "
             />
           </div>
           <div className="relative">
@@ -79,7 +79,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="phone"
               component="div"
-              className="text-red-500 text-base opacity-70  "
+              className="text-rose-500 text-base absolute left-400 top-4 "
             />
           </div>
           <div className="relative">
@@ -96,8 +96,8 @@ const RegistrationForm = () => {
               }}
               className={`absolute left-80 top-5  ${
                 showPassword === true
-                  ? " text-red-500"
-                  : "text-black  hover:text-rose-500 transition-all duration-150 ease-in-out"
+                  ? " text-rose-500"
+                  : "text-black  hover:text-rose-500 transition-all duration-150 ease-in-out "
               } `}
             >
               <FaEyeSlash className="w-5 h-5" />
@@ -105,7 +105,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="password"
               component="div"
-              className="text-red-500 text-base opacity-70  "
+              className="text-rose-500 text-base absolute left-400 top-4 "
             />
           </div>
           <button

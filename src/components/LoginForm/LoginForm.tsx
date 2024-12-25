@@ -50,7 +50,7 @@ const LoginForm = () => {
             <ErrorMessage
               name="email"
               component="div"
-              className="text-red-500 text-base opacity-70   "
+              className="text-rose-500 text-base  absolute left-400 top-4   "
             />
           </div>
 
@@ -68,7 +68,7 @@ const LoginForm = () => {
               }}
               className={`absolute left-80 top-5  ${
                 showPassword === true
-                  ? " text-red-500"
+                  ? " bg-rose-500"
                   : "text-black  hover:text-rose-500 transition-all duration-150 ease-in-out"
               } `}
             >
@@ -77,7 +77,7 @@ const LoginForm = () => {
             <ErrorMessage
               name="password"
               component="div"
-              className="text-red-500 text-base opacity-70  "
+              className="text-rose-500 text-base absolute left-400 top-4  "
             />
           </div>
           <button

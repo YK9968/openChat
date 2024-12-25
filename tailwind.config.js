@@ -9,6 +9,9 @@ module.exports = {
       height: {
         chatHeight: "500px",
       },
+      inset: {
+        400: "400px", // Додаємо кастомний відступ
+      },
     },
   },
   plugins: [],

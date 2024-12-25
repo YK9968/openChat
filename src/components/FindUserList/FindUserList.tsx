@@ -15,7 +15,8 @@ const FindUserList = () => {
       </p>
     );
   }
-  const fiterUsers = users.filter((user) => user.email !== userInfo.email);
+
+  const fiterUsers = users.filter((user) => user.id !== userInfo.id);
 
   return (
     <ul className="flex flex-wrap gap-3 w-findUsersListWidth">
