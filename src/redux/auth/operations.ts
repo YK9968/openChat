@@ -3,7 +3,7 @@ import axios from "axios";
 import { ILoginUser, IRegisterUser } from "../../types/authTypes";
 import { RootState } from "../store";
 
-axios.defaults.baseURL = "http://localhost:4000/api/";
+axios.defaults.baseURL = "https://openchat-server-39rp.onrender.com/api/";
 
 const setAuthHeader = (token: string) => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
