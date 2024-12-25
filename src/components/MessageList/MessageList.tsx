@@ -12,8 +12,8 @@ import { styles, overlay } from "../../types/modalStyles/styles";
 interface IMessageListProps {
   messages: Message[];
   user: User;
-  deleteMessage: (id: string) => void;
-  updateMessage: (id: string, text: string) => void;
+  deleteMessage: (id: string, chatId: string) => void;
+  updateMessage: (id: string, text: string, chatId: string) => void;
 }
 
 const MessageList: FC<IMessageListProps> = ({
@@ -50,7 +50,7 @@ const MessageList: FC<IMessageListProps> = ({
           <MessageCard message={message} user={user} />
           {user.id === message.userId && (
             <div className="flex flex-col mt-1">
-              <button onClick={() => deleteMessage(message.id)}>
+              <button onClick={() => deleteMessage(message.id, message.chatId)}>
                 <MdDeleteOutline className="w-5 h-5 hover:text-rose-600 transition-all duration-150 ease-in-out" />
               </button>
               <button onClick={() => toggleEditModal(message.id)}>

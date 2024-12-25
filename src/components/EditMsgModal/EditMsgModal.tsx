@@ -5,7 +5,7 @@ import { Field, Form, Formik, FormikHelpers } from "formik";
 interface IEditMsgModalProps {
   toggleForm: () => void;
   msg: Message;
-  updateMessage: (id: string, text: string) => void;
+  updateMessage: (id: string, text: string, chatId: string) => void;
 }
 
 const EditMsgModal: FC<IEditMsgModalProps> = ({
@@ -17,7 +17,7 @@ const EditMsgModal: FC<IEditMsgModalProps> = ({
     value: { text: string },
     actions: FormikHelpers<{ text: string }>
   ) => {
-    updateMessage(msg.id, value.text);
+    updateMessage(msg.chatId, msg.id, value.text);
     actions.resetForm();
     toggleForm();
   };

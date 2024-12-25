@@ -25,7 +25,7 @@ const ChatPage = () => {
 
   useEffect(() => {
     if (!id) return;
-    const socket = io("https://openchat-server-39rp.onrender.com");
+    const socket = io("http://localhost:4000");
     setSocket(socket);
     dispatch(getAllMessages(id));
     socket.emit("join_chat", { chatId: id });
@@ -45,14 +45,19 @@ const ChatPage = () => {
     return () => {
       socket.disconnect();
     };
-  }, [id]);
+  }, [id, dispatch]);
 
-  const updateMessage = (messageId: string, newMessage: string) => {
-    socket.emit("update_message", { messageId, newMessage });
+  const updateMessage = (
+    chatId: string,
+    messageId: string,
+    newMessage: string
+  ) => {
+    console.log(messageId);
+    socket.emit("update_message", { chatId, messageId, newMessage });
   };
 
-  const deleteMessage = (messageId: string) => {
-    socket.emit("delete_message", { messageId });
+  const deleteMessage = (messageId: string, chatId: string) => {
+    socket.emit("delete_message", { messageId, chatId });
   };
 
   const sendMessage = () => {
